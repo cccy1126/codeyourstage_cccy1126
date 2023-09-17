@@ -22,15 +22,15 @@ function SkillsForm() {
   return (
     // here is layout
     <div className="flex flex-col col-span-12 sm:col-span-6 bg-white dark:bg-slate-800 shadow-lg rounded-sm border border-slate-200 dark:border-slate-700">
-      <form
-        className="p-6 px-8"
-        onSubmit={(e) => {
-          e.preventDefault();
-          postForm(studentId, skills);
-        }}
+    <form
+      className="p-6 px-8 "
+      onSubmit={(e) => {
+        e.preventDefault();
+        postForm(studentId, skills);
+      }}
       >
-        <div className="mb-4">
-          <label className="mb-2">請輸入學號</label>
+       <div className="mb-4">
+          <label className="mb-2 ">請輸入學號</label>
           <input
             type="text"
             className="w-full border rounded"
@@ -39,15 +39,15 @@ function SkillsForm() {
           />
         </div>
         {Object.keys(skills).map((skill) => (
-          <div className="" key={skill}>
+          <div className="my-3 " key={skill}>
             <label className="">{skill}</label>
             <select
-              className="border rounded"
+              className="border rounded ml-3"
               value={skills[skill]}
               onChange={(e) =>
                 handleSelectChange(skill, Number(e.target.value))
               }
-            >
+              >
               {[...Array(11).keys()].map(
                 (
                   number // option value from 0 to 10
